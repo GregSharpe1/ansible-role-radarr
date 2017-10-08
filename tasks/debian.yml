@@ -41,7 +41,8 @@
   file:
     path: "{{ radarr_dest }}"
     state: directory
-    mode: 0644
+    mode: 0755
+    recurse: yes
     owner: "{{ radarr_user }}"
 
 - name: Copy the service file
