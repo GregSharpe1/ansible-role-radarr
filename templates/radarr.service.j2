@@ -1,0 +1,14 @@
+[Unit]
+Description=Radarr Server
+After=network.target
+
+[Service]
+WorkingDirectory=/opt
+ExecStart=/usr/bin/mono {{ radarr_dest }}/Radarr.exe
+GuessMainPID=no
+Type=simple
+User={{ sonarr_user }}
+TimeoutStopSec=20
+
+[Install]
+WantedBy=multi-user.target

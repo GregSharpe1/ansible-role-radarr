@@ -1,2 +1,6 @@
 ---
 # defaults file for ansible-role-radarr
+
+radarr_user: "radarr"
+radarr_dest: "/opt/Radarr"
+radarr_version: "0.2.0.846"
