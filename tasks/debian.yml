@@ -26,11 +26,16 @@
     comment: "Radarr user"
 
 - name: Download Radarr tar file. Version "{{ radarr_version }}"
-  unarchive:
-    src: "https://github.com/Radarr/Radarr/releases/download/v{{ radarr_version }}/Radarr.develop.{{ radarr_version }}.linux.tar.gz"
+  get_url:
+    url: "https://github.com/Radarr/Radarr/releases/download/v{{ radarr_version }}/Radarr.develop.{{ radarr_version }}.linux.tar.gz"
     dest: "/opt"
 
-- name: Unzip the Radarr zip file
+- name: Unzip the radarr zip file
+  unarchieve:
+    src: "/opt/Radarr.develop.{{ radarr_version }}.linux.tar.gz"
+    dest: "/opt"
+
+- name: Change persmissions on the Radarr
   file:
     path: "{{ radarr_dest }}"
     state: directory
