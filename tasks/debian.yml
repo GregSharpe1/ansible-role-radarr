@@ -27,7 +27,7 @@
 
 - name: Download Radarr tar file. Version "{{ radarr_version }}"
   unarchive:
-    url: "https://github.com/Radarr/Radarr/releases/download/v{{ radarr_version }}/Radarr.develop.{{ radarr_version }}.linux.tar.gz"
+    src: "https://github.com/Radarr/Radarr/releases/download/v{{ radarr_version }}/Radarr.develop.{{ radarr_version }}.linux.tar.gz"
     dest: "/opt"
 
 - name: Unzip the Radarr zip file
