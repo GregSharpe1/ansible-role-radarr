@@ -29,11 +29,13 @@
   get_url:
     url: "https://github.com/Radarr/Radarr/releases/download/v{{ radarr_version }}/Radarr.develop.{{ radarr_version }}.linux.tar.gz"
     dest: "/tmp"
+    mode: 0777
 
 - name: Unzip the radarr zip file
   unarchive:
     src: "/tmp/Radarr.develop.{{ radarr_version }}.linux.tar.gz"
     dest: "/opt"
+    remote_src: yes
 
 - name: Change persmissions on the Radarr
   file:
